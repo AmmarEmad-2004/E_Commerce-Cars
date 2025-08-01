@@ -1,6 +1,7 @@
 import 'package:cars_app/core/routing/app_routers.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 import 'package:video_player/video_player.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,16 +19,20 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     _controller = VideoPlayerController.asset('assets/videos/splash.mp4')
-      ..initialize().then((_) {
-        setState(() {
+      ..initialize().then((_) async {
+        setState(() {});
+
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _controller.play();
+          _controller.setPlaybackSpeed(1.5);
         });
       });
 
     _controller.addListener(() {
-      if (_controller.value.position >= _controller.value.duration) {
+      if (_controller.value.isInitialized &&
+          _controller.value.position >= _controller.value.duration) {
         if (mounted) {
-          GoRouter.of(context).pushReplacement(AppRouters.onboarding);
+          GoRouter.of(context).push(AppRouters.onboarding);
         }
       }
     });
@@ -50,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   aspectRatio: _controller.value.aspectRatio,
                   child: VideoPlayer(_controller),
                 )
-                : const CircularProgressIndicator(),
+                : Lottie.asset('assets/animation/loading.json', width: 150),
       ),
     );
   }
