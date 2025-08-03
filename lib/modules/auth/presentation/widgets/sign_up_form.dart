@@ -6,8 +6,8 @@ import 'package:cars_app/core/widgets/size.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,18 +17,30 @@ class LoginForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Email Address',
+            'Full Name',
             style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
           ),
-          CustomTextField(hint: 'Enter your email'),
+          CustomTextField(hint: 'name'),
 
+          CustomSize(h: 8),
+          Text(
+            'Email',
+            style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
+          ),
+          CustomTextField(hint: 'email'),
           CustomSize(h: 8),
           Text(
             'Password',
             style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
           ),
-          CustomTextField(isObscure: true, hint: 'Enter your password'),
-          CustomSize(h: 72),
+          CustomTextField(isObscure: true, hint: 'password'),
+          CustomSize(h: 8),
+          Text(
+            'Confiem Password',
+            style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
+          ),
+          CustomTextField(isObscure: true, hint: 'confirm password'),
+          CustomSize(h: 20),
           CustomElevatedButton(
             onPressed: () {
               GoRouter.of(context).push(AppRouters.home);

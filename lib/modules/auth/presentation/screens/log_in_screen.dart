@@ -6,10 +6,15 @@ class LogInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: LogInScreenBody(),
+    return GestureDetector(
+      onDoubleTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: LogInScreenBody(),
+        ),
       ),
     );
   }

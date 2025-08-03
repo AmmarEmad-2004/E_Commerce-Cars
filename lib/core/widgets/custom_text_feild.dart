@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      
       keyboardType: keyboardType,
       obscureText: isObscure,
       decoration: InputDecoration(
@@ -22,11 +23,17 @@ class CustomTextField extends StatelessWidget {
 
         filled: true,
         fillColor: Color.fromARGB(133, 70, 77, 94),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide.none,
-        ),
+        border: border(),
+        focusedBorder: border(),
+        enabledBorder: border(),
       ),
+    );
+  }
+
+  OutlineInputBorder border() {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide.none,
     );
   }
 }

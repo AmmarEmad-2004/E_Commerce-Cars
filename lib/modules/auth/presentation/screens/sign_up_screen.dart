@@ -1,3 +1,4 @@
+import 'package:cars_app/modules/auth/presentation/widgets/sign_up_screen_body.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -5,6 +6,19 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return GestureDetector(
+      onDoubleTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: SignUpScreenBody(),
+        ),
+      ),
+    );
   }
 }
+
+
+

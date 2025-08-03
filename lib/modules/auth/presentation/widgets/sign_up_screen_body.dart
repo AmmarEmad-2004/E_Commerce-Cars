@@ -1,14 +1,13 @@
 import 'package:cars_app/core/routing/app_routers.dart';
 import 'package:cars_app/core/widgets/custom_card.dart';
 import 'package:cars_app/core/widgets/custom_text_button.dart';
-
 import 'package:cars_app/core/widgets/size.dart';
-import 'package:cars_app/modules/auth/presentation/widgets/log_in_form.dart';
+import 'package:cars_app/modules/auth/presentation/widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LogInScreenBody extends StatelessWidget {
-  const LogInScreenBody({super.key});
+class SignUpScreenBody extends StatelessWidget {
+  const SignUpScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,45 +23,43 @@ class LogInScreenBody extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 48),
+                    padding: const EdgeInsets.symmetric(vertical: 22),
                     child: Text(
-                      'Login',
+                      textAlign: TextAlign.center,
+                      'Create Your\nAccount',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  LoginForm(),
+                  SignUpForm(),
                   CustomSize(h: 16),
-                  CustomTextButton(
-                    text: 'Forget your password',
-                    onPressed: () {},
-                  ),
+
                   CustomSize(h: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Don't have an account? ",
+                        "Already have an account? ",
                         style: TextStyle(fontSize: 14),
                       ),
                       CustomTextButton(
-                        text: 'Register Now',
+                        text: 'Sign In',
                         onPressed: () {
-                          GoRouter.of(context).push(AppRouters.signUp);
+                          GoRouter.of(context).push(AppRouters.logIn);
                         },
                       ),
                     ],
                   ),
-                  CustomSize(h: 48),
+                  CustomSize(h: 20),
                 ],
               ),
             ),
             Positioned(
               left: 10,
               right: 10,
-              top: -180,
+              top: -170,
               child: Image.asset('assets/images/logo.png'),
             ),
           ],
