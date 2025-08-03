@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (_controller.value.isInitialized &&
           _controller.value.position >= _controller.value.duration) {
         if (mounted) {
-          GoRouter.of(context).push(AppRouters.onboarding);
+          GoRouter.of(context).pushReplacement(AppRouters.onboarding);
         }
       }
     });

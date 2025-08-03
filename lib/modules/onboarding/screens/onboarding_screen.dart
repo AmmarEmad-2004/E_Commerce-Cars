@@ -1,6 +1,8 @@
+import 'package:cars_app/core/routing/app_routers.dart';
 import 'package:cars_app/core/widgets/custom_elevated_button.dart';
 import 'package:cars_app/core/widgets/size.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -42,11 +44,17 @@ class OnboardingScreen extends StatelessWidget {
                 ),
                 Spacer(),
                 CustomElevatedButton(
+                  onPressed: () {
+                    GoRouter.of(context).pushReplacement(AppRouters.signUp);
+                  },
                   data: 'Sign Up',
                   backgroundColor: Color(0xff3175b4),
                 ),
                 CustomSize(h: 8),
                 CustomElevatedButton(
+                  onPressed: () {
+                    GoRouter.of(context).pushReplacement(AppRouters.logIn);
+                  },
                   data: 'Sign In',
                   backgroundColor: Colors.black,
                   side: BorderSide(color: Color(0xff323743)),

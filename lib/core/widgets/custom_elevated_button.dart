@@ -5,10 +5,11 @@ class CustomElevatedButton extends StatelessWidget {
     super.key,
     required this.data,
     required this.backgroundColor,
-    this.side,
+    this.side, this.onPressed,
   });
   final String data;
   final BorderSide? side;
+ final void Function()? onPressed;
   final Color backgroundColor;
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class CustomElevatedButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(data),
       ),
     );
