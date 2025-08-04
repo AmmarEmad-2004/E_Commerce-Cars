@@ -36,14 +36,14 @@ class SignUpForm extends StatelessWidget {
           CustomTextField(isObscure: true, hint: 'password'),
           CustomSize(h: 8),
           Text(
-            'Confiem Password',
+            'Confirm Password',
             style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
           ),
           CustomTextField(isObscure: true, hint: 'confirm password'),
           CustomSize(h: 20),
           CustomElevatedButton(
             onPressed: () {
-              GoRouter.of(context).push(AppRouters.home);
+              GoRouter.of(context).push(AppRouters.homeLayout);
             },
             data: 'Sign In',
             backgroundColor: Color(0xff3175b4),

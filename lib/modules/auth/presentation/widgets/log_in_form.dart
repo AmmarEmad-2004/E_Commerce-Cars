@@ -31,7 +31,7 @@ class LoginForm extends StatelessWidget {
           CustomSize(h: 72),
           CustomElevatedButton(
             onPressed: () {
-              GoRouter.of(context).push(AppRouters.home);
+              GoRouter.of(context).push(AppRouters.homeLayout);
             },
             data: 'Sign In',
             backgroundColor: Color(0xff3175b4),
