@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
         WidgetsBinding.instance.addPostFrameCallback((_) {
           _controller.play();
-          _controller.setPlaybackSpeed(1.5);
+          _controller.setPlaybackSpeed(1.7);
         });
       });
 
