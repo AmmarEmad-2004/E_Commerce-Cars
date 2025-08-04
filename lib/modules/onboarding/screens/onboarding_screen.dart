@@ -1,3 +1,4 @@
+import 'package:cars_app/core/constants/app_images.dart';
 import 'package:cars_app/core/routing/app_routers.dart';
 import 'package:cars_app/core/widgets/custom_elevated_button.dart';
 import 'package:cars_app/core/widgets/size.dart';
@@ -14,7 +15,7 @@ class OnboardingScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/450w-ruxQm4Z7ztc.webp"),
+            image: AssetImage(AppImages.i450wRuxQm4Z7ztc),
             fit: BoxFit.fill,
           ),
         ),
