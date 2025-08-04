@@ -18,19 +18,19 @@ class AppImages {
   /// assets/images/person.jpg
   static const String person = "assets/images/person.jpg";
 
-   /// Assets for imagesVector
+  /// Assets for imagesVector
   /// assets/images/vector.svg
   static const String vector = "assets/images/vector.svg";
 
   /// Assets for imagesVector1
   /// assets/images/vector-1.svg
-  static const String vector1 = "assets/images/vector-1.svg";
+  static const String vector1 = "assets/images/vector1.svg";
 
   /// Assets for imagesVector2
   /// assets/images/vector-2.svg
-  static const String vector2 = "assets/images/vector-2.svg";
+  static const String vector2 = "assets/images/vector2.svg";
 
   /// Assets for imagesVector7
   /// assets/images/vector-7.svg
-  static const String vector7 = "assets/images/vector-7.svg";
+  static const String vector7 = "assets/images/vector7.svg";
 }
