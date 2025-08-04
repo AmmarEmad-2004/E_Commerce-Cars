@@ -35,6 +35,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
+  flutter_svg: ^2.2.0
   go_router: ^16.0.0
   lottie: ^3.1.0
   responsive_navigation_bar: ^5.0.2
@@ -86,5 +87,5 @@ flutter_assets:
   assets_path: assets/images/
   output_path: lib/core/constants/
   filename: assets.dart
-  field_prefix:
+  field_prefix: null
   classname: AppImages
