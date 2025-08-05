@@ -1,6 +1,5 @@
-import 'package:cars_app/core/constants/app_images.dart';
+import 'package:cars_app/modules/home/presentation/widgets/custom_car_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -22,26 +21,32 @@ class HomeBody extends StatelessWidget {
           topRight: Radius.circular(30),
         ),
       ),
-      child: Center(child: CustomCarCard()),
+      child: Padding(
+        padding: const EdgeInsets.only(right: 30, left: 30, top: 30),
+        child: CarsList(),
+      ),
     );
   }
 }
 
-class CustomCarCard extends StatelessWidget {
-  const CustomCarCard({super.key});
+class CarsList extends StatelessWidget {
+  const CarsList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Color(0xFF2C2C2E),
-      child: Column(
-        children: [
-          Icon(Icons.favorite_outline_sharp),
-          SvgPicture.asset(AppImages.car1),
-          Text('toyta'),
-          Row(children: [Text('54000')]),
-        ],
+    final w = MediaQuery.sizeOf(context).width;
+    final h = MediaQuery.sizeOf(context).height;
+
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        mainAxisSpacing: h * 0.04,
+        crossAxisSpacing: w * 0.04,
+        crossAxisCount: 2,
+        childAspectRatio: 3.4 / 4,
       ),
+      itemBuilder: (context, index) {
+        return CustomCarCard();
+      },
     );
   }
 }

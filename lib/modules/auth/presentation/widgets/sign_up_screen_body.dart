@@ -1,5 +1,5 @@
 import 'package:cars_app/core/routing/app_routers.dart';
-import 'package:cars_app/core/widgets/custom_card.dart';
+import 'package:cars_app/core/widgets/custom_background.dart';
 import 'package:cars_app/core/widgets/custom_text_button.dart';
 import 'package:cars_app/core/widgets/size.dart';
 import 'package:cars_app/modules/auth/presentation/widgets/sign_up_form.dart';
