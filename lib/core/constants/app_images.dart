@@ -37,4 +37,8 @@ class AppImages {
   /// Assets for imagesVector7
   /// assets/images/vector-7.svg
   static const String vector7 = "assets/images/vector7.svg";
+
+  /// Assets for addNewCar
+  /// assets/images/addNewCar.png
+  static const String addNewCar = "assets/images/addNewCar.png";
 }

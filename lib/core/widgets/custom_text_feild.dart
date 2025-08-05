@@ -7,14 +7,16 @@ class CustomTextField extends StatelessWidget {
     this.hint,
     this.isObscure = false,
     this.keyboardType,
+    this.maxLines = 1,
   });
   final String? hint;
   final bool isObscure;
   final TextInputType? keyboardType;
+  final int? maxLines;
   @override
   Widget build(BuildContext context) {
     return TextField(
-      
+      maxLines: maxLines,
       keyboardType: keyboardType,
       obscureText: isObscure,
       decoration: InputDecoration(
@@ -32,7 +34,7 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder border() {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(16),
       borderSide: BorderSide.none,
     );
   }
