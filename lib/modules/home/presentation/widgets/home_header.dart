@@ -29,6 +29,7 @@ class HomeHeader extends StatelessWidget {
           SearchTextFeild(),
           CustomSize(h: 13),
           BrandList(),
+          
         ],
       ),
     );

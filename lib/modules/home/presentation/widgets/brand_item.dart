@@ -1,4 +1,4 @@
-import 'package:cars_app/core/constants/app_images.dart';
+import 'package:cars_app/core/widgets/size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -9,7 +9,8 @@ class BrandItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SvgPicture.asset(AppImages.vector),
+        SvgPicture.asset(image),
+        CustomSize(h: 4),
         Text(name, style: TextStyle(fontSize: 14)),
       ],
     );

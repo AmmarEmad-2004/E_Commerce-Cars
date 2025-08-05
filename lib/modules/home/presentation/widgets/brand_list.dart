@@ -11,10 +11,10 @@ class BrandList extends StatelessWidget {
       direction: Axis.horizontal,
       spacing: 15,
       children: [
-        // BrandItem(image: AppImages.vector, name: 'Mercedes'),
+        BrandItem(image: AppImages.vector, name: 'Mercedes'),
         BrandItem(image: AppImages.vector1, name: 'Opel'),
-        // BrandItem(image: AppImages.vector2, name: 'VW'),
-        // BrandItem(image: AppImages.vector7, name: 'Toyota'),
+        BrandItem(image: AppImages.vector2, name: 'VW'),
+        BrandItem(image: AppImages.vector7, name: 'Toyota'),
       ],
     );
   }

@@ -43,7 +43,7 @@ class ResponsiveNavbar extends StatelessWidget {
   }) {
     return NavigationBarButton(
       backgroundGradient: LinearGradient(
-        colors: [Color(0xFF00F260), Color(0xFF0575E6)],
+        colors: [Color(0xFFfa709a), Color(0xFFfee140)],
       ),
       icon: icon,
       text: title,
