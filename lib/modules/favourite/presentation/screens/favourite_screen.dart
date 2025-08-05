@@ -1,3 +1,5 @@
+import 'package:cars_app/modules/favourite/presentation/widgets/favourite_screen_body.dart';
+
 import 'package:flutter/material.dart';
 
 class FavouriteScreen extends StatelessWidget {
@@ -5,6 +7,6 @@ class FavouriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [Text('favorite')]);
+    return FavouriteScreenBody();
   }
 }

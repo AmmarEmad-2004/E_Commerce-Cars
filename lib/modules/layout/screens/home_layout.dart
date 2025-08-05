@@ -18,9 +18,7 @@ class HomeLayout extends StatelessWidget {
             return screens[state.selectedIndex];
           },
         ),
-        bottomNavigationBar: ResponsiveNavbar(
-          
-          isManager: isManager),
+        bottomNavigationBar: ResponsiveNavbar(isManager: isManager),
       ),
     );
   }

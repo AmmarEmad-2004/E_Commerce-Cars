@@ -1,9 +1,8 @@
-import 'package:cars_app/modules/home/presentation/widgets/cars_list.dart';
-
+import 'package:cars_app/modules/favourite/presentation/widgets/favourite_cars_list.dart';
 import 'package:flutter/material.dart';
 
-class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
+class FavouriteBody extends StatelessWidget {
+  const FavouriteBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +21,7 @@ class HomeBody extends StatelessWidget {
           topRight: Radius.circular(30),
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(right: 30, left: 30, top: 30),
-        child: CarsList(),
-      ),
+      child: FavouriteCarsList(),
     );
   }
 }
-
-
