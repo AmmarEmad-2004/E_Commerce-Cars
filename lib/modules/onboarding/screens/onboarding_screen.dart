@@ -48,17 +48,19 @@ class OnboardingScreen extends StatelessWidget {
                   onPressed: () {
                     GoRouter.of(context).pushReplacement(AppRouters.signUp);
                   },
-                  data: 'Sign Up',
+
                   backgroundColor: Color(0xff3175b4),
+                  child: Text('Sign Up'),
                 ),
                 CustomSize(h: 8),
                 CustomElevatedButton(
                   onPressed: () {
                     GoRouter.of(context).pushReplacement(AppRouters.logIn);
                   },
-                  data: 'Sign In',
+
                   backgroundColor: Colors.black,
                   side: BorderSide(color: Color(0xff323743)),
+                  child: Text('Sign In'),
                 ),
                 Spacer(),
               ],

@@ -45,8 +45,9 @@ class SignUpForm extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).push(AppRouters.homeLayout);
             },
-            data: 'Sign In',
+
             backgroundColor: Color(0xff3175b4),
+            child: Text('Sign In'),
           ),
         ],
       ),

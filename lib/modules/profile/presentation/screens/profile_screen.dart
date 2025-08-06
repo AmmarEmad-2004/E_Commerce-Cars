@@ -1,5 +1,5 @@
 
-import 'package:cars_app/modules/profile/presentation/screens/profile_screen_body.dart';
+import 'package:cars_app/modules/profile/presentation/widgets/profile_screen_body.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {

@@ -15,6 +15,7 @@ class HomeHeader extends StatelessWidget {
       child: Column(
         children: [
           CustomListTile(
+            borderRadius: 0,
             subTitle: Text(
               'Ammar Emad',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
@@ -29,7 +30,6 @@ class HomeHeader extends StatelessWidget {
           SearchTextFeild(),
           CustomSize(h: 13),
           BrandList(),
-          
         ],
       ),
     );
