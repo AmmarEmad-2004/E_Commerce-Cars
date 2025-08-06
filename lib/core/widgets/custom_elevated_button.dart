@@ -5,12 +5,17 @@ class CustomElevatedButton extends StatelessWidget {
     super.key,
     required this.data,
     required this.backgroundColor,
-    this.side, this.onPressed,
+    this.side,
+    this.onPressed,
+    this.foregroundColor = Colors.white,
+    this.radius = 16,
   });
   final String data;
   final BorderSide? side;
- final void Function()? onPressed;
+  final void Function()? onPressed;
   final Color backgroundColor;
+  final Color? foregroundColor;
+  final double radius;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -19,9 +24,9 @@ class CustomElevatedButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           side: side,
           backgroundColor: backgroundColor,
-          foregroundColor: Colors.white,
+          foregroundColor: foregroundColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(radius),
           ),
         ),
         onPressed: onPressed,
