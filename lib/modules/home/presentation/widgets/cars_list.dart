@@ -1,5 +1,7 @@
+import 'package:cars_app/core/routing/app_routers.dart';
 import 'package:cars_app/modules/home/presentation/widgets/custom_car_card.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CarsList extends StatelessWidget {
   const CarsList({super.key});
@@ -17,7 +19,13 @@ class CarsList extends StatelessWidget {
         childAspectRatio: 3.4 / 4,
       ),
       itemBuilder: (context, index) {
-        return CustomCarCard();
+        return GestureDetector(
+          onTap: () {
+            GoRouter.of(context).go(AppRouters.myCart);
+            // GoRouter.of(context).go('/carDetails', extra: {'index': index});// Navigate to car details screen with index
+          },
+          child: CustomCarCard(),
+        );
       },
     );
   }

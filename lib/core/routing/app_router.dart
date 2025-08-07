@@ -1,6 +1,7 @@
 import 'package:cars_app/core/routing/app_routers.dart';
 import 'package:cars_app/modules/auth/presentation/screens/log_in_screen.dart';
 import 'package:cars_app/modules/auth/presentation/screens/sign_up_screen.dart';
+import 'package:cars_app/modules/home/presentation/screens/cart_screen.dart';
 import 'package:cars_app/modules/layout/screens/home_layout.dart';
 import 'package:cars_app/modules/onboarding/screens/onboarding_screen.dart';
 import 'package:cars_app/modules/splash/screens/splash_screen.dart';
@@ -28,6 +29,10 @@ abstract class AppRouter {
       GoRoute(
         path: AppRouters.homeLayout,
         builder: (context, state) => const HomeLayout(isManager: true),
+      ),
+       GoRoute(
+        path: AppRouters.myCart,
+        builder: (context, state) => const MyCartScreen(),
       ),
     ],
   );
