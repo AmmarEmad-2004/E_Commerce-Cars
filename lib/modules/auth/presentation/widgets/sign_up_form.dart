@@ -28,12 +28,24 @@ class _SignUpFormState extends State<SignUpForm> {
   TextEditingController confirmPasswordController = TextEditingController();
 
   @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
+          final user = state.user;
           ShowSnackBar.show(context, 'Successfully Sign Up');
-          GoRouter.of(context).pushReplacement(AppRouters.homeLayout);
+          GoRouter.of(
+            context,
+          ).pushReplacement(extra: user, AppRouters.homeLayout);
         } else if (state is SignUpFailure) {
           ShowSnackBar.show(context, state.message);
         }

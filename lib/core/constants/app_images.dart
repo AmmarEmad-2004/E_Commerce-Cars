@@ -41,4 +41,8 @@ class AppImages {
   /// Assets for addNewCar
   /// assets/images/addNewCar.png
   static const String addNewCar = "assets/images/addNewCar.png";
+
+  /// Assets for images450wRuxQm4Z7ztc
+  /// assets/images/450w-ruxQm4Z7ztc.webp
+  static const String person2 = "assetsظimagesظOIP.webp";
 }

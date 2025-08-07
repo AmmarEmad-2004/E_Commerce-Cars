@@ -7,21 +7,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeLayout extends StatelessWidget {
   const HomeLayout({super.key, required this.user});
-  
+
   final UserModel user;
   @override
   Widget build(BuildContext context) {
-    final  isManager = user.isAdmin;
-    return BlocProvider(
-      create: (context) => NavBarCubit(isManager),
-      child: Scaffold(
-        body: BlocBuilder<NavBarCubit, NavBarState>(
-          builder: (context, state) {
-            final screens = context.read<NavBarCubit>().screens;
-            return screens[state.selectedIndex];
-          },
+    final isManager = user.isAdmin;
+    return MultiRepositoryProvider(
+      providers: [RepositoryProvider.value(value: user)],
+      child: BlocProvider(
+        create: (context) => NavBarCubit(isManager),
+        child: Scaffold(
+          body: BlocBuilder<NavBarCubit, NavBarState>(
+            builder: (context, state) {
+              final screens = context.read<NavBarCubit>().screens;
+              return screens[state.selectedIndex];
+            },
+          ),
+          bottomNavigationBar: ResponsiveNavbar(isManager: isManager),
         ),
-        bottomNavigationBar: ResponsiveNavbar(isManager: isManager),
       ),
     );
   }

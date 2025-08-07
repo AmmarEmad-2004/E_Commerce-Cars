@@ -36,8 +36,11 @@ class _LoginFormState extends State<LoginForm> {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
+          final user = state.user;
           ShowSnackBar.show(context, 'Successfully Logged In');
-          GoRouter.of(context).pushReplacement(AppRouters.homeLayout);
+          GoRouter.of(
+            context,
+          ).pushReplacement(extra: user, AppRouters.homeLayout);
         } else if (state is LoginFailure) {
           ShowSnackBar.show(context, state.message);
         }

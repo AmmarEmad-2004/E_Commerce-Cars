@@ -13,7 +13,7 @@ class AuthRepoImplementation implements AuthRepo {
   Future<Either<AuthFailure, UserModel>> createUser({
     required String email,
     required String password,
-    required String name
+    required String name,
   }) async {
     try {
       final userCredential = await _auth.createUserWithEmailAndPassword(
@@ -23,12 +23,16 @@ class AuthRepoImplementation implements AuthRepo {
 
       final user = userCredential.user;
 
+      // 🔐 التحقق هل هو مدير ولا لأ
+      bool isAdmin = user!.uid == "HJ0zd3S2UxTU1ne8P6ZxVVssQo92";
+
       final userModel = UserModel(
-        uid: user!.uid,
+        uid: user.uid,
+        name: name,
         email: email,
         image: " ",
         favorites: [],
-        isAdmin: false, // هنا المدير مش بيتحدد من هنا
+        isAdmin: isAdmin,
       );
 
       await _firestore.collection('users').doc(user.uid).set(userModel.toMap());
@@ -43,7 +47,6 @@ class AuthRepoImplementation implements AuthRepo {
   Future<Either<AuthFailure, UserModel>> signIn({
     required String email,
     required String password,
-    
   }) async {
     try {
       final userCredential = await _auth.signInWithEmailAndPassword(
