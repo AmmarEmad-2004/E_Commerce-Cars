@@ -25,6 +25,7 @@ class AuthRepoImplementation implements AuthRepo {
       final userModel = UserModel(
         uid: user!.uid,
         email: email,
+        image: " ",
         favorites: [],
         isAdmin: false, // هنا المدير مش بيتحدد من هنا
       );
@@ -53,7 +54,7 @@ class AuthRepoImplementation implements AuthRepo {
       final doc = await _firestore.collection('users').doc(user!.uid).get();
 
       if (!doc.exists) {
-        return left(FirebaseAuthFailure( message: "User data not found "));
+        return left(FirebaseAuthFailure(message: "User data not found "));
       }
 
       final userModel = UserModel.fromMap(doc.data()!);
@@ -69,7 +70,7 @@ class AuthRepoImplementation implements AuthRepo {
       await _auth.signOut();
       return right(null);
     } catch (e) {
-      return left(FirebaseAuthFailure( message: e.toString()));
+      return left(FirebaseAuthFailure(message: e.toString()));
     }
   }
 }

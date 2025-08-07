@@ -20,26 +20,26 @@ class SignUpForm extends StatelessWidget {
             'Full Name',
             style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
           ),
-          CustomTextField(hint: 'name'),
+          CustomTextFormField(hint: 'name'),
 
           CustomSize(h: 8),
           Text(
             'Email',
             style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
           ),
-          CustomTextField(hint: 'email'),
+          CustomTextFormField(hint: 'email'),
           CustomSize(h: 8),
           Text(
             'Password',
             style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
           ),
-          CustomTextField(isObscure: true, hint: 'password'),
+          CustomTextFormField(isObscure: true, hint: 'password'),
           CustomSize(h: 8),
           Text(
             'Confirm Password',
             style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
           ),
-          CustomTextField(isObscure: true, hint: 'confirm password'),
+          CustomTextFormField(isObscure: true, hint: 'confirm password'),
           CustomSize(h: 20),
           CustomElevatedButton(
             onPressed: () {

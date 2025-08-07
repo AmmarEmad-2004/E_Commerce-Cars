@@ -33,26 +33,26 @@ class AddCarForm extends StatelessWidget {
                 'Car Name',
                 style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
               ),
-              CustomTextField(hint: 'e.g., Tesla Model 3'),
+              CustomTextFormField(hint: 'e.g., Tesla Model 3'),
 
               CustomSize(h: 8),
               Text(
                 'Price',
                 style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
               ),
-              CustomTextField(hint: r'e.g., $45,000'),
+              CustomTextFormField(hint: r'e.g., $45,000'),
               CustomSize(h: 8),
               Text(
                 'Password',
                 style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
               ),
-              CustomTextField(isObscure: true, hint: 'password'),
+              CustomTextFormField(isObscure: true, hint: 'password'),
               CustomSize(h: 8),
               Text(
                 'Description',
                 style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
               ),
-              CustomTextField(
+              CustomTextFormField(
                 maxLines: 4,
                 hint: 'Enter a detailed description of the car...',
               ),

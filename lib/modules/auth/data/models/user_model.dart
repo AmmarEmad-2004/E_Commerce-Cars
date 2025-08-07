@@ -3,12 +3,14 @@ class UserModel {
   final String email;
   final List<String> favorites;
   final bool isAdmin;
+  final String image; 
 
   UserModel({
     required this.uid,
     required this.email,
     required this.favorites,
     required this.isAdmin,
+    required this.image, 
   });
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
@@ -17,6 +19,7 @@ class UserModel {
       email: map['email'] ?? '',
       favorites: List<String>.from(map['favorites'] ?? []),
       isAdmin: map['isAdmin'] ?? false,
+      image: map['image'] ?? '', 
     );
   }
 
@@ -26,6 +29,7 @@ class UserModel {
       'email': email,
       'favorites': favorites,
       'isAdmin': isAdmin,
+      'image': image, 
     };
   }
 }
