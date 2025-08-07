@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "381706002013",
+    "project_id": "cars-app-75bcf",
+    "storage_bucket": "cars-app-75bcf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381706002013:android:bc682efe31b49827c8f7b4",
+        "android_client_info": {
+          "package_name": "com.example.cars_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5nmD6AfSM8F4xoGia7u5lQpb8pusUc4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
