@@ -14,6 +14,13 @@ class CartScreenImage extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           color: const Color(0xff222222),
+          boxShadow: [
+          BoxShadow(
+            color: const Color.fromARGB(231, 0, 0, 0),
+            blurRadius: 8,
+            offset: Offset(0, -4),
+          ),
+        ],
           borderRadius: BorderRadius.circular(16),
         ),
         child: AspectRatio(

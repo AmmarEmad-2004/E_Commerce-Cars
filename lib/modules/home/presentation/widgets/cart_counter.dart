@@ -33,9 +33,9 @@ class CounterWidget extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         shadows: [
           BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.2),
-            blurRadius: 13,
-            offset: Offset(0, 7),
+            color: Color(0xFFF47B00).withValues(alpha:  0.2),
+            blurRadius: 6,
+            offset: Offset(0, 3),
             spreadRadius: 0,
           ),
         ],
