@@ -1,3 +1,4 @@
+import 'package:cars_app/core/widgets/size.dart';
 import 'package:cars_app/modules/home/presentation/widgets/cart_screen_header.dart';
 import 'package:flutter/material.dart';
 import 'cart_info_cart_screen.dart';
@@ -11,8 +12,8 @@ class CartScreenBody extends StatelessWidget {
     return  Column(children: [
       CartScreenHeader(),
       CartScreenImage(),
-      SizedBox(height: 16),
-      CarInfoInCartScreen(),
+     CustomSize(h: 16),
+      Expanded(child: CarInfoInCartScreen()),
     ],);
   }
 }

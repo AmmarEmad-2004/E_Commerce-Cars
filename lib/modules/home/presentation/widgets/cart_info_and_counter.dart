@@ -1,3 +1,4 @@
+import 'package:cars_app/core/widgets/size.dart';
 import 'package:cars_app/modules/home/presentation/widgets/car_rating.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class CartInfoAndCounter extends StatelessWidget {
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               )),
-            SizedBox(width: 8),
+           CustomSize(w: 8),
              CarRating(),
           ],),
       ],),
