@@ -6,13 +6,20 @@ class FavouriteCarsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
-          child: AspectRatio(aspectRatio: 5 / 4, child: FavouriteCard()),
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: GridView.builder(
+        itemCount: 10,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+          childAspectRatio: 0.71,
+        ),
+        itemBuilder: (context, index) {
+          return FavouriteCard();
+        },
+      ),
     );
   }
 }

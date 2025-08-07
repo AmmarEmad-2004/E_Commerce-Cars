@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CartCounter extends StatelessWidget {
-  const CartCounter({super.key, this.onDecrementTap, this.onIncrementTap});
+  const CartCounter({super.key, this.onDecrementTap, this.onIncrementTap, required this.counterText});
   final void Function()? onDecrementTap;
   final void Function()? onIncrementTap;
-
+  final String counterText ;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -12,7 +12,7 @@ class CartCounter extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         CounterWidget(onTap: onDecrementTap, icon: Icons.remove),
-        Text('1', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+        Text(counterText, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
         CounterWidget(icon: Icons.add, onTap: onIncrementTap),
       ],
     );
@@ -31,14 +31,6 @@ class CounterWidget extends StatelessWidget {
       decoration: ShapeDecoration(
         color: const Color(0xFFF47B00),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        shadows: [
-          BoxShadow(
-            color: Color(0xFFF47B00).withValues(alpha:  0.2),
-            blurRadius: 6,
-            offset: Offset(0, 3),
-            spreadRadius: 0,
-          ),
-        ],
       ),
       child: IconButton(
         padding: EdgeInsets.zero,

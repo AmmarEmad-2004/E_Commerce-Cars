@@ -1,49 +1,32 @@
-import 'package:cars_app/core/constants/app_images.dart';
-import 'package:cars_app/modules/home/presentation/widgets/car_rating.dart';
 import 'package:flutter/material.dart';
+import 'favourite_car_image.dart';
 
 class FavouriteCard extends StatelessWidget {
   const FavouriteCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: const Color(0xFF2C2C2E),
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: const Color(0xFF2C2C2E),
+        borderRadius: BorderRadius.circular(16),
+      ),
       child: Padding(
         padding: const EdgeInsets.only(top: 14, left: 14, bottom: 11),
-        child: Stack(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(Icons.favorite_outline_sharp),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                AppImages.car2,
-
-                width: double.infinity,
-                fit: BoxFit.fill,
-              ),
+            FavouriteCarImage(
+              onTap: () {},
             ),
-
-            Positioned(
-              bottom: 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text('toyta'), Text(r'$54,000')],
-              ),
+            Text(
+              'Toyota',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text('4.5'), CarRating()],
-                ),
-              ),
+            Text(
+              r'$ 54,000',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
           ],
         ),

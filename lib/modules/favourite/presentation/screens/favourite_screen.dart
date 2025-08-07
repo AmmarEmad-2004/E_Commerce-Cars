@@ -10,3 +10,4 @@ class FavouriteScreen extends StatelessWidget {
     return FavouriteScreenBody();
   }
 }
+
