@@ -4,7 +4,7 @@ part 'counter_state.dart';
 
 class CounterCubit extends Cubit<CounterState> {
   CounterCubit() : super(CounterInitial());
-  double totalPrice = 120;
+  double totalPrice = 54000;
   int count = 1;
   void increment(double price) {
     count++;
@@ -13,7 +13,7 @@ class CounterCubit extends Cubit<CounterState> {
   }
 
   void decrement(double price) {
-    if (count <= 0) return;
+    if (count <= 1) return;
     count--;
     totalPrice -= price;
     emit(CounterSuccess(totalPrice: totalPrice, count: count));
