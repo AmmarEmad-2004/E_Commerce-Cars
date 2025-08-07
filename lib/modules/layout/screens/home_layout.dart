@@ -1,3 +1,4 @@
+import 'package:cars_app/modules/auth/data/models/user_model.dart';
 import 'package:cars_app/modules/layout/logic/cubit/nav_bar_cubit.dart';
 import 'package:cars_app/modules/layout/logic/cubit/nav_bar_state.dart';
 import 'package:cars_app/modules/layout/widgets/responsive_nav_bar.dart';
@@ -5,10 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeLayout extends StatelessWidget {
-  const HomeLayout({super.key, required this.isManager});
-  final bool isManager;
+  const HomeLayout({super.key, required this.user});
+  
+  final UserModel user;
   @override
   Widget build(BuildContext context) {
+    final  isManager = user.isAdmin;
     return BlocProvider(
       create: (context) => NavBarCubit(isManager),
       child: Scaffold(

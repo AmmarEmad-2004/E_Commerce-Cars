@@ -13,6 +13,7 @@ class AuthRepoImplementation implements AuthRepo {
   Future<Either<AuthFailure, UserModel>> createUser({
     required String email,
     required String password,
+    required String name
   }) async {
     try {
       final userCredential = await _auth.createUserWithEmailAndPassword(
@@ -42,6 +43,7 @@ class AuthRepoImplementation implements AuthRepo {
   Future<Either<AuthFailure, UserModel>> signIn({
     required String email,
     required String password,
+    
   }) async {
     try {
       final userCredential = await _auth.signInWithEmailAndPassword(

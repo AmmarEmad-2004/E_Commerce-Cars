@@ -1,4 +1,5 @@
 import 'package:cars_app/core/routing/app_routers.dart';
+import 'package:cars_app/modules/auth/data/models/user_model.dart';
 import 'package:cars_app/modules/auth/presentation/screens/log_in_screen.dart';
 import 'package:cars_app/modules/auth/presentation/screens/sign_up_screen.dart';
 import 'package:cars_app/modules/home/presentation/screens/cart_screen.dart';
@@ -28,7 +29,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: AppRouters.homeLayout,
-        builder: (context, state) => const HomeLayout(isManager: true),
+        builder: (context, state){
+    final user = state.extra as UserModel;
+    return HomeLayout(user: user);
+  },
       ),
        GoRoute(
         path: AppRouters.myCart,

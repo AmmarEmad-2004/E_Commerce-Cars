@@ -6,11 +6,13 @@ abstract class AuthRepo {
   Future<Either<AuthFailure, UserModel>> createUser({
     required String email,
     required String password,
+    required String name
   });
 
   Future<Either<AuthFailure, UserModel>> signIn({
     required String email,
     required String password,
+    
   });
 
   Future<Either<AuthFailure, void>> signOut();
