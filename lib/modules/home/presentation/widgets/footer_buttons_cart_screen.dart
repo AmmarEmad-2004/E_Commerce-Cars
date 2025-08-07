@@ -11,17 +11,16 @@ class FooterButtonsCartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-      Expanded(
-        child: CustomElevatedButton(
-          backgroundColor: Color(0xFFF47B00),
-          radius: 8,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 14),
-            child: Text('\$54,000',style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w500),),
+        Container(
+          decoration: BoxDecoration(
+            color: Color(0xFFF47B00),
+            borderRadius: BorderRadius.circular(8),
           ),
-           onPressed: () {}),
-      ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            child: Text('\$54,000',style: TextStyle(
+                fontSize: 18, fontWeight: FontWeight.w500),),
+          ),),
       CustomSize(w: 16),
       Expanded(
         child: CustomElevatedButton(

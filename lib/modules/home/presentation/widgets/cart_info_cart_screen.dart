@@ -34,6 +34,7 @@ class CarInfoInCartScreen extends StatelessWidget {
           CustomSize(h: 16),
           Text('Enjoy our delicious Hamburger Veggie Burger, made with a savory blend of fresh vegetables and herbs, topped with crisp lettuce, juicy tomatoes, and tangy pickles, all served on a soft, toasted bun. Perfect for a quick and satisfying meal!', 
            maxLines: 6,
+            overflow: TextOverflow.ellipsis,
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
           Spacer(),
           FooterButtonsCartScreen(),
