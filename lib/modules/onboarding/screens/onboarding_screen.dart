@@ -25,8 +25,8 @@ class OnboardingScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image.asset('assets/images/logo.png'),
-                Spacer(flex: 2),
+                // Image.asset('assets/images/logo.png'),
+                Spacer(flex: 4),
                 Text(
                   textAlign: TextAlign.center,
                   "Your Drive Starts\nHere",

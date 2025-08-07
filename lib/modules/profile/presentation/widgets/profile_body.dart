@@ -1,5 +1,7 @@
 import 'package:cars_app/core/helpers/spaces.dart';
+
 import 'package:cars_app/core/widgets/custom_list_tile.dart';
+import 'package:cars_app/modules/profile/presentation/widgets/logout_and_delete_section.dart';
 
 import 'package:flutter/material.dart';
 
@@ -49,6 +51,9 @@ class ProfileBody extends StatelessWidget {
           title: 'Privacy & Security',
           icon: Icons.arrow_forward_ios,
         ),
+        verticalSpace(24),
+        LogoutAndDeleteSection(),
+        // PrivacyAndTermsOfService(),
       ],
     );
   }

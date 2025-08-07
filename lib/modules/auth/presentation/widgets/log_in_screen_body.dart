@@ -18,9 +18,7 @@ class LogInScreenBody extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             CustomBackground(
-              onTap: () {
-                FocusScope.of(context).unfocus();
-              },
+             
               child: Column(
                 children: [
                   Padding(

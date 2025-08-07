@@ -6,6 +6,7 @@ class SearchTextFeild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.search, size: 30),

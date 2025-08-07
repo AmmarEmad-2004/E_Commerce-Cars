@@ -16,44 +16,44 @@ class SignUpScreenBody extends StatelessWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            CustomBackground(
-              onTap: () {
-                FocusScope.of(context).unfocus();
-              },
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 22),
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      'Create Your\nAccount',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: CustomBackground(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 22),
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        'Create Your\nAccount',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                  ),
-                  SignUpForm(),
-                  CustomSize(h: 16),
+                    SignUpForm(),
+                    CustomSize(h: 16),
 
-                  CustomSize(h: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Already have an account? ",
-                        style: TextStyle(fontSize: 14),
-                      ),
-                      CustomTextButton(
-                        text: 'Sign In',
-                        onPressed: () {
-                          GoRouter.of(context).push(AppRouters.logIn);
-                        },
-                      ),
-                    ],
-                  ),
-                  CustomSize(h: 20),
-                ],
+                    CustomSize(h: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Already have an account? ",
+                          style: TextStyle(fontSize: 14),
+                        ),
+                        CustomTextButton(
+                          text: 'Sign In',
+                          onPressed: () {
+                            GoRouter.of(context).push(AppRouters.logIn);
+                          },
+                        ),
+                      ],
+                    ),
+                    CustomSize(h: 20),
+                  ],
+                ),
               ),
             ),
             Positioned(
