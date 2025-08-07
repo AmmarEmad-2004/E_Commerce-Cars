@@ -31,14 +31,6 @@ class CounterWidget extends StatelessWidget {
       decoration: ShapeDecoration(
         color: const Color(0xFFF47B00),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        shadows: [
-          BoxShadow(
-            color: Color(0xFFF47B00).withValues(alpha:  0.2),
-            blurRadius: 6,
-            offset: Offset(0, 3),
-            spreadRadius: 0,
-          ),
-        ],
       ),
       child: IconButton(
         padding: EdgeInsets.zero,
