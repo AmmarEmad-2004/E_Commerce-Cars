@@ -24,11 +24,10 @@ class CartScreenImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: AspectRatio(
-          aspectRatio: 5/4,
-          //aspectRatio: 390 / 229,
+          aspectRatio: 1.5,
           child: Image.asset(
             AppImages.car2,
-            fit: BoxFit.fill,
+            fit: BoxFit.contain,
           ),
         ),
       ),

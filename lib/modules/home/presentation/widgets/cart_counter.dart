@@ -4,7 +4,7 @@ class CartCounter extends StatelessWidget {
   const CartCounter({super.key, this.onDecrementTap, this.onIncrementTap, required this.counterText});
   final void Function()? onDecrementTap;
   final void Function()? onIncrementTap;
-  final String counterText ; // Default counter text, can be changed later
+  final String counterText ;
   @override
   Widget build(BuildContext context) {
     return Row(

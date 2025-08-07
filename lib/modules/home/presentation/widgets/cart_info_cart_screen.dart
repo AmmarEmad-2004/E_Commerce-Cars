@@ -29,7 +29,7 @@ class CarInfoInCartScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            CustomSize(h: MediaQuery.of(context).size.height * 0.05),
+          CustomSize(h: MediaQuery.of(context).size.height * 0.03),
           CartInfoAndCounter(),
           CustomSize(h: 16),
           Text('Enjoy our delicious Hamburger Veggie Burger, made with a savory blend of fresh vegetables and herbs, topped with crisp lettuce, juicy tomatoes, and tangy pickles, all served on a soft, toasted bun. Perfect for a quick and satisfying meal!', 
