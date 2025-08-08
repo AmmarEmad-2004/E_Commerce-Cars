@@ -1,10 +1,15 @@
-import 'package:cars_app/core/constants/app_images.dart';
 import 'package:cars_app/modules/home/presentation/widgets/car_rating.dart';
 import 'package:flutter/material.dart';
 
 class CustomCarCard extends StatelessWidget {
-  const CustomCarCard({super.key});
-
+  const CustomCarCard({
+    super.key,
+    required this.name,
+    required this.image,
+    required this.price,
+  });
+  final String name, image;
+  final double price;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -19,8 +24,8 @@ class CustomCarCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
-                AppImages.car2,
-                height: 100,
+                image,
+                height: 120,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
@@ -30,7 +35,7 @@ class CustomCarCard extends StatelessWidget {
               bottom: 0,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text('toyta'), Text(r'$54,000')],
+                children: [Text(name), Text('\$${price.toStringAsFixed(2)}')],
               ),
             ),
 

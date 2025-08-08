@@ -89,11 +89,6 @@ class _AddCarFormState extends State<AddCarForm> {
                   style: TextStyle(color: AppColors.primaryColor, fontSize: 16),
                 ),
                 CustomTextFormField(
-                  validator:
-                      (p0) => AddCarValidations.validatePrice(
-                        context,
-                        priceController.text,
-                      ),
                   hint: r'e.g., $45,000',
                   controller: priceController,
                   keyboardType: TextInputType.number,

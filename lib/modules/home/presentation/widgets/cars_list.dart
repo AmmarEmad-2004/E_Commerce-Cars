@@ -1,6 +1,9 @@
 import 'package:cars_app/core/routing/app_routers.dart';
+import 'package:cars_app/modules/home/presentation/logic/home_cubit/home_cubit.dart';
+import 'package:cars_app/modules/home/presentation/logic/home_cubit/home_state.dart';
 import 'package:cars_app/modules/home/presentation/widgets/custom_car_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class CarsList extends StatelessWidget {
@@ -11,21 +14,43 @@ class CarsList extends StatelessWidget {
     final w = MediaQuery.sizeOf(context).width;
     final h = MediaQuery.sizeOf(context).height;
 
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        mainAxisSpacing: h * 0.04,
-        crossAxisSpacing: w * 0.04,
-        crossAxisCount: 2,
-        childAspectRatio: 3.4 / 4,
-      ),
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            GoRouter.of(context).push(AppRouters.myCart);
-            // GoRouter.of(context).go('/carDetails', extra: {'index': index});// Navigate to car details screen with index
-          },
-          child: CustomCarCard(),
-        );
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        if (state is HomeLoading) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (state is HomeError) {
+          return Center(child: Text(state.message));
+        } else if (state is HomeSuccess) {
+          final cars = state.cars;
+          if (cars.isEmpty) {
+            return const Center(child: Text("No cars found"));
+          } else {
+            return GridView.builder(
+              padding: EdgeInsets.all(w * 0.04),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisSpacing: h * 0.04,
+                crossAxisSpacing: w * 0.04,
+                crossAxisCount: 2,
+                childAspectRatio: 3.4 / 4,
+              ),
+              itemCount: cars.length,
+              itemBuilder: (context, index) {
+                final car = cars[index];
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouters.myCart, extra: car);
+                  },
+                  child: CustomCarCard(
+                    name: car.name,
+                    price: car.price,
+                    image: car.imageUrl,
+                  ),
+                );
+              },
+            );
+          }
+        }
+        return const SizedBox();
       },
     );
   }

@@ -8,6 +8,7 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -29,5 +30,3 @@ class HomeBody extends StatelessWidget {
     );
   }
 }
-
-
