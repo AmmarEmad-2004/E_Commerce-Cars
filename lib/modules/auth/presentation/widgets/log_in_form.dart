@@ -42,7 +42,7 @@ class _LoginFormState extends State<LoginForm> {
           ShowSnackBar.show(context, 'Successfully Logged In');
           GoRouter.of(
             context,
-          ).pushReplacement(extra: user, AppRouters.homeLayout);
+          ).pushReplacement( AppRouters.homeLayout);
         } else if (state is LoginFailure) {
           ShowSnackBar.show(context, state.message);
         }

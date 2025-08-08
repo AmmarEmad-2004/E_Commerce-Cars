@@ -47,7 +47,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ShowSnackBar.show(context, 'Successfully Sign Up');
           GoRouter.of(
             context,
-          ).pushReplacement(extra: user, AppRouters.homeLayout);
+          ).pushReplacement( AppRouters.homeLayout);
         } else if (state is SignUpFailure) {
           ShowSnackBar.show(context, state.message);
         }
