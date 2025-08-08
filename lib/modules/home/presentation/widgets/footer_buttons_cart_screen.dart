@@ -1,6 +1,6 @@
 import 'package:cars_app/core/widgets/custom_elevated_button.dart';
 import 'package:cars_app/core/widgets/size.dart';
-import 'package:cars_app/modules/home/presentation/manager/cubit/counter_cubit.dart';
+import 'package:cars_app/modules/home/presentation/logic/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -22,11 +22,11 @@ class FavouriteCard extends StatelessWidget {
             ),
             Text(
               'Toyota',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              //style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
               r'$ 54,000',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+             // style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
           ],
         ),

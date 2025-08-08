@@ -30,8 +30,8 @@ abstract class AppRouter {
       GoRoute(
         path: AppRouters.homeLayout,
         builder: (context, state){
-    final user = state.extra as UserModel;
-    return HomeLayout(user: user);
+   // final user = state.extra as UserModel;
+    return HomeLayout();
   },
       ),
        GoRoute(
