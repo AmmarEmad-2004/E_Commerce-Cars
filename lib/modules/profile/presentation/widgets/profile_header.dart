@@ -1,4 +1,5 @@
 import 'package:cars_app/core/constants/app_images.dart';
+import 'package:cars_app/core/helpers/show_edit_profile_dialog.dart';
 import 'package:cars_app/core/helpers/spaces.dart';
 import 'package:cars_app/core/themes/app_colors.dart';
 import 'package:cars_app/core/widgets/custom_background.dart';
@@ -22,9 +23,10 @@ class ProfileHeader extends StatelessWidget {
               height: 100,
               width: 100,
               child: CircleAvatar(
-               backgroundImage: (user!.image.trim().isNotEmpty)
-                  ? NetworkImage(user.image)
-                  : AssetImage(AppImages.person) as ImageProvider,
+                backgroundImage:
+                    (user!.image.trim().isNotEmpty)
+                        ? NetworkImage(user.image)
+                        : AssetImage(AppImages.person) as ImageProvider,
               ),
             ),
             verticalSpace(18),
@@ -38,7 +40,10 @@ class ProfileHeader extends StatelessWidget {
             ),
             verticalSpace(14),
             CustomElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+               // final userCubit = context.read<UserCubit>();
+                showEditProfileDialog(context, user.name, user.image);
+              },
               foregroundColor: Color(0xff3175b4),
 
               backgroundColor: Colors.black,
@@ -51,4 +56,5 @@ class ProfileHeader extends StatelessWidget {
       ),
     );
   }
-}  
+}
+
