@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:cars_app/modules/home/presentation/logic/counter_cubit/counter_cubit.dart';
+import 'package:meta/meta.dart';
+part 'counter_state.dart';
 
 class CounterCubit extends Cubit<CounterState> {
   CounterCubit() : super(CounterInitial());

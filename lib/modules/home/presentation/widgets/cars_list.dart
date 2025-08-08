@@ -22,16 +22,17 @@ class CarsList extends StatelessWidget {
           return Center(child: Text(state.message));
         } else if (state is HomeSuccess) {
           final cars = state.cars;
+
           if (cars.isEmpty) {
             return const Center(child: Text("No cars found"));
           } else {
             return GridView.builder(
-              padding: EdgeInsets.all(w * 0.04),
+              padding: EdgeInsets.all(w * 0.001),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: h * 0.04,
-                crossAxisSpacing: w * 0.04,
+                mainAxisSpacing: h * 0.01,
+                crossAxisSpacing: w * 0.01,
                 crossAxisCount: 2,
-                childAspectRatio: 3.4 / 4,
+                childAspectRatio: 5 / 6,
               ),
               itemCount: cars.length,
               itemBuilder: (context, index) {
@@ -50,7 +51,7 @@ class CarsList extends StatelessWidget {
             );
           }
         }
-        return const SizedBox();
+        return const SizedBox(child: Text('kbskb'));
       },
     );
   }
