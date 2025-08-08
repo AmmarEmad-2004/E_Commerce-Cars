@@ -8,15 +8,11 @@ import 'package:http/http.dart' as http;
 import 'package:uuid/uuid.dart';
 
 class AddCarRepoImpl implements AddCarRepo {
-  final FirebaseFirestore firestore;
   final String cloudName;
   final String uploadPreset;
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  AddCarRepoImpl({
-    required this.firestore,
-    required this.cloudName,
-    required this.uploadPreset,
-  });
+  AddCarRepoImpl({required this.cloudName, required this.uploadPreset});
 
   @override
   Future<Either<String, Unit>> addCar({
