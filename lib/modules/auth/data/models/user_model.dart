@@ -19,7 +19,7 @@ class UserModel {
     return UserModel(
       uid: map['uid'],
       email: map['email'],
-      name: map['name'], // تأكد إنه موجود
+      name: map['name'],
       image: map['image'],
       favorites: List<String>.from(map['favorites']),
       isAdmin: map['isAdmin'],
@@ -30,7 +30,7 @@ class UserModel {
     return {
       'uid': uid,
       'email': email,
-      'name': name, // تأكد إنه بيتخزن
+      'name': name,
       'image': image,
       'favorites': favorites,
       'isAdmin': isAdmin,

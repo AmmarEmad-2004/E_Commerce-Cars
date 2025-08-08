@@ -6,10 +6,12 @@ class CustomCarCard extends StatelessWidget {
     super.key,
     required this.name,
     required this.image,
-    required this.price,
+    required this.price, required this.isFavourite, required this.onFavouriteTap,
   });
   final String name, image;
   final double price;
+  final bool isFavourite;
+  final VoidCallback onFavouriteTap;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -52,7 +54,11 @@ class CustomCarCard extends StatelessWidget {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [Icon(Icons.favorite_outline_sharp)],
+                    children: [GestureDetector(
+                      onTap:onFavouriteTap ,
+                      child: Icon(isFavourite ? Icons.favorite : Icons.favorite_border,
+                          color: isFavourite ? Colors.red : Colors.white,),
+                    )],
                   ),
                 ],
               ),

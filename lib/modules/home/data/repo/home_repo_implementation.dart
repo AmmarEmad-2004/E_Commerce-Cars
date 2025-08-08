@@ -26,4 +26,35 @@ class HomeRepoImpl implements HomeRepo {
       return Left(e.toString());
     }
   }
+
+    @override
+  Future<Either<String, Unit>> toggleFavourite({
+    required String uid,
+    required String carId,
+  }) async {
+    try {
+      final userRef = firestore.collection('users').doc(uid);
+      final snapshot = await userRef.get();
+
+      if (!snapshot.exists) {
+        return left("User not found");
+      }
+
+      final List favourites = snapshot.data()?['favorites'] ?? [];
+
+      if (favourites.contains(carId)) {
+        await userRef.update({
+          'favorites': FieldValue.arrayRemove([carId]),
+        });
+      } else {
+        await userRef.update({
+          'favorites': FieldValue.arrayUnion([carId]),
+        });
+      }
+
+      return right(unit);
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
 }
