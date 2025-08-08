@@ -8,6 +8,7 @@ import 'package:cars_app/core/widgets/custom_text_feild.dart';
 import 'package:cars_app/core/widgets/size.dart';
 import 'package:cars_app/modules/auth/presentation/logic/log_in_cubit/login_cubit.dart';
 import 'package:cars_app/modules/auth/presentation/logic/log_in_cubit/login_state.dart';
+import 'package:cars_app/modules/layout/logic/cubit/user_cubit/user_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -37,10 +38,11 @@ class _LoginFormState extends State<LoginForm> {
       listener: (context, state) {
         if (state is LoginSuccess) {
           final user = state.user;
+          context.read<UserCubit>().setUser(user);
           ShowSnackBar.show(context, 'Successfully Logged In');
           GoRouter.of(
             context,
-          ).pushReplacement(extra: user, AppRouters.homeLayout);
+          ).pushReplacement( AppRouters.homeLayout);
         } else if (state is LoginFailure) {
           ShowSnackBar.show(context, state.message);
         }

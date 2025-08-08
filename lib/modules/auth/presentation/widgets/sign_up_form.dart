@@ -8,6 +8,7 @@ import 'package:cars_app/core/widgets/custom_text_feild.dart';
 import 'package:cars_app/core/widgets/size.dart';
 import 'package:cars_app/modules/auth/presentation/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:cars_app/modules/auth/presentation/logic/sign_up_cubit/sign_up_state.dart';
+import 'package:cars_app/modules/layout/logic/cubit/user_cubit/user_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -42,10 +43,11 @@ class _SignUpFormState extends State<SignUpForm> {
       listener: (context, state) {
         if (state is SignUpSuccess) {
           final user = state.user;
+          context.read<UserCubit>().setUser(user);
           ShowSnackBar.show(context, 'Successfully Sign Up');
           GoRouter.of(
             context,
-          ).pushReplacement(extra: user, AppRouters.homeLayout);
+          ).pushReplacement( AppRouters.homeLayout);
         } else if (state is SignUpFailure) {
           ShowSnackBar.show(context, state.message);
         }
