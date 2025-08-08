@@ -6,6 +6,7 @@ import 'package:cars_app/core/widgets/custom_background.dart';
 import 'package:cars_app/core/widgets/custom_text_feild.dart';
 import 'package:cars_app/core/widgets/size.dart';
 import 'package:cars_app/modules/add_car/presentation/logic/add_car/add_car_cubit.dart';
+import 'package:cars_app/modules/add_car/presentation/widgets/add_car_button.dart';
 import 'package:cars_app/modules/add_car/presentation/widgets/image_up_load_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -135,26 +136,12 @@ class _AddCarFormState extends State<AddCarForm> {
                     if (state is AddCarLoading) {
                       return const Center(child: CircularProgressIndicator());
                     }
-                    return ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          if (imageFile != null) {
-                            context.read<AddCarCubit>().addCar(
-                              name: nameController.text,
-                              description: descController.text,
-                              price: double.tryParse(priceController.text) ?? 0,
-                              imagePath: imageFile!.path,
-                            );
-                          } else {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text("Please select an image"),
-                              ),
-                            );
-                          }
-                        }
-                      },
-                      child: const Text("Add Car"),
+                    return AddCarButton(
+                      formKey: _formKey,
+                      imageFile: imageFile,
+                      nameController: nameController,
+                      descController: descController,
+                      priceController: priceController,
                     );
                   },
                 ),
