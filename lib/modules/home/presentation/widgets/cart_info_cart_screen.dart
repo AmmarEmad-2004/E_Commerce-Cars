@@ -1,13 +1,12 @@
 import 'package:cars_app/core/widgets/size.dart';
+import 'package:cars_app/modules/add_car/data/models/car_model.dart';
 import 'package:cars_app/modules/home/presentation/widgets/footer_buttons_cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'cart_info_and_counter.dart';
 
 class CarInfoInCartScreen extends StatelessWidget {
-  const CarInfoInCartScreen({
-    super.key,
-  });
-
+  const CarInfoInCartScreen({super.key, required this.car});
+  final CarModel car;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,16 +28,24 @@ class CarInfoInCartScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-          CustomSize(h: MediaQuery.of(context).size.height * 0.03),
-          CartInfoAndCounter(),
-          CustomSize(h: 16),
-          Text(' advanced technology. It features a comfortable interior, excellent fuel efficiency, and high-level safety systems to ensure maximum protection for you and your passengers. Whether for daily use or long-distance travel, this car is built to deliver performance, reliability, and comfort.', 
-           maxLines: 6,
-            overflow: TextOverflow.ellipsis,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
-          Spacer(),
-          FooterButtonsCartScreen(),
-        ],),
+            CustomSize(h: MediaQuery.of(context).size.height * 0.03),
+            CartInfoAndCounter(
+              name: car.name,
+              price: car.price.toString(),
+            ),
+            CustomSize(h: 16),
+            Text(
+              car.description,
+              maxLines: 6,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            ),
+            Spacer(),
+            FooterButtonsCartScreen(
+              price: car.price.toString(),
+            ),
+          ],
+        ),
       ),
     );
   }

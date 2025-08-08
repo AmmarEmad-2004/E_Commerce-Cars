@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class CartScreenImage extends StatelessWidget {
   const CartScreenImage({
-    super.key,
+    super.key, required this.imageUrl,
   });
-
+final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,9 +25,12 @@ class CartScreenImage extends StatelessWidget {
         ),
         child: AspectRatio(
           aspectRatio: 1.5,
-          child: Image.asset(
-            AppImages.car2,
-            fit: BoxFit.contain,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.network(
+              imageUrl,
+              fit: BoxFit.fill,
+            ),
           ),
         ),
       ),

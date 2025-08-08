@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FooterButtonsCartScreen extends StatelessWidget {
-  const FooterButtonsCartScreen({super.key});
-
+  const FooterButtonsCartScreen({super.key, required this.price});
+  final String price;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -25,7 +25,7 @@ class FooterButtonsCartScreen extends StatelessWidget {
                   vertical: 14,
                 ),
                 child: Text(
-                  '\$${state is CounterSuccess ? state.totalPrice : '${54000}'}',
+                  '\$${state is CounterSuccess ? state.totalPrice : price}',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),

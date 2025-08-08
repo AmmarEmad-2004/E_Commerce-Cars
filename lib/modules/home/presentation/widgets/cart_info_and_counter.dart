@@ -8,8 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'cart_counter.dart';
 
 class CartInfoAndCounter extends StatelessWidget {
-  const CartInfoAndCounter({super.key});
-
+  const CartInfoAndCounter({super.key, required this.name, required this.price});
+  final String name, price;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,11 +19,11 @@ class CartInfoAndCounter extends StatelessWidget {
           spacing: 10,
           children: [
             Text(
-              'Toyota',
+              name,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             Text(
-              r'$54,000',
+              '\$$price',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             Row(
