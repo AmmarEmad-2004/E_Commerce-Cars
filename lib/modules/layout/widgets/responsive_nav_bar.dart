@@ -15,7 +15,7 @@ class ResponsiveNavbar extends StatelessWidget {
       navBarButton(icon: Icons.home, title: 'Home'),
       navBarButton(icon: Icons.favorite_outlined, title: 'Fav'),
       if (isManager) navBarButton(icon: Icons.add, title: 'Add Car'),
-      navBarButton(icon: Icons.shopping_cart, title: 'Cart'),
+
       navBarButton(icon: Icons.person, title: 'Profile'),
     ];
 

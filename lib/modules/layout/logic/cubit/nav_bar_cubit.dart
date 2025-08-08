@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:cars_app/modules/add_car/presentation/screens/add_car_screen.dart';
-import 'package:cars_app/modules/cart/presentation/screens/cart_screen.dart';
 import 'package:cars_app/modules/favourite/presentation/screens/favourite_screen.dart';
 import 'package:cars_app/modules/home/presentation/screens/home_screen.dart';
 import 'package:cars_app/modules/profile/presentation/screens/profile_screen.dart';
@@ -12,15 +11,9 @@ class NavBarCubit extends Cubit<NavBarState> {
   final bool isManager;
   List get screens {
     if (isManager) {
-      return [
-        HomeScreen(),
-        FavouriteScreen(),
-        AddCarScreen(),
-        CartScreen(),
-        ProfileScreen(),
-      ];
+      return [HomeScreen(), FavouriteScreen(), AddCarScreen(), ProfileScreen()];
     } else {
-      return [HomeScreen(), FavouriteScreen(), CartScreen(), ProfileScreen()];
+      return [HomeScreen(), FavouriteScreen(), ProfileScreen()];
     }
   }
 

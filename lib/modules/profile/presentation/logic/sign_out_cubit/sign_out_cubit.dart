@@ -1,5 +1,5 @@
 import 'package:cars_app/modules/auth/data/repo/auth_repo.dart';
-import 'package:cars_app/modules/auth/presentation/logic/sign_out_cubit/sign_out_state.dart';
+import 'package:cars_app/modules/profile/presentation/logic/sign_out_cubit/sign_out_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 

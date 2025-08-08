@@ -21,7 +21,7 @@ class CarsList extends StatelessWidget {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            GoRouter.of(context).go(AppRouters.myCart);
+            GoRouter.of(context).push(AppRouters.myCart);
             // GoRouter.of(context).go('/carDetails', extra: {'index': index});// Navigate to car details screen with index
           },
           child: CustomCarCard(),
