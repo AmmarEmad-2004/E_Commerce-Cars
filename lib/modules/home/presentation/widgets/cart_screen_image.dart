@@ -1,4 +1,3 @@
-import 'package:cars_app/core/constants/app_images.dart';
 import 'package:flutter/material.dart';
 
 class CartScreenImage extends StatelessWidget {

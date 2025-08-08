@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cars_app/core/constants/app_images.dart';
 import 'package:cars_app/core/helpers/show_edit_profile_dialog.dart';
 import 'package:cars_app/core/helpers/spaces.dart';
@@ -14,6 +16,23 @@ class ProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = context.watch<UserCubit>().state;
+    ImageProvider<Object> avatarImage;
+
+    if (user == null) {
+      avatarImage = AssetImage(AppImages.person);
+    } else {
+      if (user.image.trim().isEmpty) {
+        avatarImage = AssetImage(AppImages.person);
+      } else if (user.image.startsWith('http')) {
+        // رابط إنترنت
+        avatarImage = NetworkImage(user.image);
+      } else {
+        // اعتبره مسار ملف محلي (File path)
+        avatarImage = FileImage(File(user.image));
+      }
+    }
+
+
     return CustomBackground(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -24,14 +43,12 @@ class ProfileHeader extends StatelessWidget {
               width: 100,
               child: CircleAvatar(
                 backgroundImage:
-                    (user!.image.trim().isNotEmpty)
-                        ? NetworkImage(user.image)
-                        : AssetImage(AppImages.person) as ImageProvider,
+                    avatarImage, // استخدام الصورة المناسبة هنا
               ),
             ),
             verticalSpace(18),
             Text(
-              user.name,
+              user!.name,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
             ),
             Text(
@@ -41,11 +58,9 @@ class ProfileHeader extends StatelessWidget {
             verticalSpace(14),
             CustomElevatedButton(
               onPressed: () {
-               // final userCubit = context.read<UserCubit>();
                 showEditProfileDialog(context, user.name, user.image);
               },
               foregroundColor: Color(0xff3175b4),
-
               backgroundColor: Colors.black,
               side: BorderSide(color: Color(0xff3175b4)),
               radius: 6,

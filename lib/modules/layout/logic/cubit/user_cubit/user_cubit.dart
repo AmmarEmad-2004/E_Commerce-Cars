@@ -13,13 +13,13 @@ class UserCubit extends Cubit<UserModel?> {
 
   Future<void> updateUser({
     required String name,
-    required File image,
+    required File ?image,
   }) async {
     if (state != null) {
       final updatedUser = UserModel(
         name: name,
         email: state!.email,
-        image: image as String, // Assuming image is a path or URL
+        image: image != null ? image.path : state!.image, // Use file path or keep existing image
         isAdmin: state!.isAdmin,
         uid: state!.uid,
         favorites: state!.favorites,
@@ -32,7 +32,7 @@ class UserCubit extends Cubit<UserModel?> {
           .doc(state!.email) // أو doc(state!.id) لو عندك id
           .update({
         'name': name,
-        'image': image,
+        'image': image != null ? image.path : state!.image,
       });
     }
   }
