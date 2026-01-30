@@ -33,9 +33,9 @@ The app focuses on providing a smooth user experience with real-time data, cloud
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="assets/screenshots/onboarding.jpeg" width="33%" />
-  <img src="assets/screenshots/signin.jpeg" width="33%" />
-  <img src="assets/screenshots/signup.jpeg" width="33%" />
+  <img src="assets/screenshots/onboarding.jpeg" width="30%" />
+  <img src="assets/screenshots/signin.jpeg" width="30%" />
+  <img src="assets/screenshots/signup.jpeg" width="30%" />
     
 </p>
 <p align="center">
